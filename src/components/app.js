@@ -1,7 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Card from "./card";
-import ContactDetails from "../contactdetails";
+import contacts from "../contactdetails";
+
+
+
+
+function CreateCard(contact){
+    return(
+        <Card
+                key= {contact.id}
+                name= {contact.name}
+                number= {contact.number}
+                image= {contact.image}
+                email= {contact.email}
+                address= {contact.address}
+
+            ></Card>
+
+    );
+}
+
+
+
+
 
 
 function App()
@@ -13,31 +35,33 @@ function App()
                 <h1> My Contact List </h1>
              </div>
 
+            {contacts.map(CreateCard)}
 
-            <Card
-                name= {ContactDetails[0].name}
-                number= {ContactDetails[0].number}
-                image= {ContactDetails[0].image}
-                email= {ContactDetails[0].email}
-                address= {ContactDetails[0].address}
+
+           {/* <Card
+                name= {contacts[0].name}
+                number= {contacts[0].number}
+                image= {contacts[0].image}
+                email= {contacts[0].email}
+                address= {contacts[0].address}
 
             ></Card>
 
             <Card 
-                name= {ContactDetails[1].name}
-                number= {ContactDetails[1].number}
-                image= {ContactDetails[1].image}
-                email= {ContactDetails[1].email}
-                address= {ContactDetails[1].address}
+                name= {contacts[1].name}
+                number= {contacts[1].number}
+                image= {contacts[1].image}
+                email= {contacts[1].email}
+                address= {contacts[1].address}
             ></Card>
 
             <Card
-                name= {ContactDetails[2].name}
-                number= {ContactDetails[2].number}
-                image= {ContactDetails[2].image}
-                email= {ContactDetails[2].email}
-                address= {ContactDetails[2].address}
-            ></Card>
+                name= {contacts[2].name}
+                number= {contacts[2].number}
+                image= {contacts[2].image}
+                email= {contacts[2].email}
+                address= {contacts[2].address}
+            ></Card> */}
 
 
         </div>
